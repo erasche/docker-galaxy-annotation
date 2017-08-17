@@ -23,6 +23,8 @@ ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/apollo-data/", "/jbrowse/data/", "/var/lib/docker"]
 
+ADD setup_data_libraries.py /bin/setup_data_libraries.py
+
 ADD postinst.sh /bin/postinst
 RUN postinst && \
     chmod 777 /apollo-data && \
